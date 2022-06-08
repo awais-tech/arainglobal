@@ -30,8 +30,38 @@ function Cars() {
   return (
     <>
       <div>
-        <div className="container-car">
+        <div className="container-car ">
           <img style={{ width: "100%", height: "80vh" }} src={background} />
+          <div className="d-md-none d-block">
+          <h1 style={{ color: "white", textAlign: "center", marginTop: "20px" }}>
+          RESERVATION
+        </h1>
+        <div className="threebox row" style={{ flex: 1, padding: "20px" }}>
+          <div className="box col-md-4" style={{ flex: 1, backgroundColor: "red" }}>
+            <h3>Your itinerary</h3>
+            <h6 style={{ fontWeight: "bold" }}>PICK UP</h6>
+            <p>{Location.state.data.check}</p>
+            <p>{Location.state.data.pickDate}</p>
+            <h6 style={{ fontWeight: "bold" }}>Drop Date</h6>
+            <p>{Location.state.data.drop}</p>
+            <p>{Location.state.data.returnDate}</p>
+          </div>
+          <div className="box col-4" style={{ flex: 1, backgroundColor: "#fff" }}>
+            <h3>Select Vehicles</h3>
+            <h6 style={{ fontWeight: "bold" }}>Type</h6>
+            <p>--</p>
+            <h6 style={{ fontWeight: "bold" }}>Add Ons</h6>
+            <p>--</p>
+          </div>
+          <div className="box col-4 " style={{ backgroundColor: "#fff" }}>
+            <h3>Reserve You Vehicle</h3>
+            <h6 style={{ fontWeight: "bold" }}>Your Information</h6>
+            <p>--</p>
+            <h6 style={{ fontWeight: "bold" }}>Payment Information</h6>
+            <p>--</p>
+          </div>
+          </div>
+        </div>
           <div
             style={{
               flexDirection: "row",
@@ -47,8 +77,8 @@ function Cars() {
           {cars.map((val) => (
             <div className="car-Cont">
               <img src={background} style={{ padding: "20px" }} />
-              <div style={{ margin: "20px" }}>
-                <p style={{ fontWeight: "bold" }}>{val.name}</p>
+              <div style={{ margin: "20px" }} className="row">
+                <p style={{ fontWeight: "bold" }} className="col-3">{val.name}</p>
                 <div
                   style={{
                     justifyContent: "space-between",
@@ -56,6 +86,7 @@ function Cars() {
                     flexDirection: "row",
                     width: "120%",
                   }}
+                  className="col-3"
                 >
                   <p>{val.seats}</p>
                   <p>{val.doors}</p>
@@ -69,7 +100,7 @@ function Cars() {
                 <button
                   onClick={() => submit(val)}
                   type="button"
-                  class="btn btn-danger"
+                  class="btn btn-danger "
                   style={{ padding: 10 }}
                 >
                   Pay Now
@@ -78,11 +109,12 @@ function Cars() {
             </div>
           ))}
         </div>
-        <h1 style={{ color: "white", textAlign: "center", marginTop: "20px" }}>
+        <div className="d-md-block d-none">
+          <h1 style={{ color: "white", textAlign: "center", marginTop: "20px" }}>
           RESERVATION
         </h1>
-        <div className="threebox" style={{ flex: 1, padding: "20px" }}>
-          <div className="box" style={{ flex: 1, backgroundColor: "red" }}>
+        <div className="threebox row" style={{ flex: 1, padding: "20px" }}>
+          <div className="box col-md-4" style={{ flex: 1, backgroundColor: "red" }}>
             <h3>Your itinerary</h3>
             <h6 style={{ fontWeight: "bold" }}>PICK UP</h6>
             <p>{Location.state.data.check}</p>
@@ -91,19 +123,20 @@ function Cars() {
             <p>{Location.state.data.drop}</p>
             <p>{Location.state.data.returnDate}</p>
           </div>
-          <div className="box" style={{ flex: 1, backgroundColor: "#fff" }}>
+          <div className="box col-4" style={{ flex: 1, backgroundColor: "#fff" }}>
             <h3>Select Vehicles</h3>
             <h6 style={{ fontWeight: "bold" }}>Type</h6>
             <p>--</p>
             <h6 style={{ fontWeight: "bold" }}>Add Ons</h6>
             <p>--</p>
           </div>
-          <div className="box" style={{ flex: 1, backgroundColor: "#fff" }}>
+          <div className="box col-4 " style={{ backgroundColor: "#fff" }}>
             <h3>Reserve You Vehicle</h3>
             <h6 style={{ fontWeight: "bold" }}>Your Information</h6>
             <p>--</p>
             <h6 style={{ fontWeight: "bold" }}>Payment Information</h6>
             <p>--</p>
+          </div>
           </div>
         </div>
       </div>

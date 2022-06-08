@@ -44,9 +44,10 @@ function AddOnsDetails({ data }) {
         }}
       >
         <h1>VEHICLE ADD-ONS</h1>
-        <input style={{ height: "30px" }} type="text" />
+       
       </div>
       <div
+      className="row"
         style={{
           flexDirection: "row",
           justifyContent: "space-around",
@@ -54,7 +55,7 @@ function AddOnsDetails({ data }) {
           margin: 40,
         }}
       >
-        <div style={{ flexDirection: "column" }}>
+        <div style={{ flexDirection: "column" }} className="col-lg-6">
           <div
             style={{
               flexDirection: "row",
@@ -221,7 +222,7 @@ function AddOnsDetails({ data }) {
           </div>
         </div>
         <div
-          className="detail"
+          className="detail col-lg-6"
           style={{ backgroundColor: "#eee", padding: "40px" }}
         >
           <h3>{data.state.car.name}</h3>

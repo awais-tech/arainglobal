@@ -7,8 +7,12 @@ function FinalForm() {
   const Location = useLocation();
   return (
     <>
+    
+    
       <CarBill Location={Location} />,
+ 
       <DriverDetails Location={Location} />
+     
     </>
   );
 }

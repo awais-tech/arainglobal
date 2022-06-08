@@ -50,7 +50,8 @@ function DriverDetails({ Location }) {
   }
 
   const submit = () => {
-    console.log(data);
+    console.log(2);
+
     const templateParams = {
       FIRST: data.FIRST,
       LAST: data.LAST,
@@ -107,9 +108,10 @@ function DriverDetails({ Location }) {
         }}
       >
         <h1>CheckOut</h1>
-        <input style={{ height: "30px" }} class="form-control" type="text" />
+       
       </div>
       <div
+      className="row"
         style={{
           flexDirection: "row",
           justifyContent: "space-around",
@@ -117,7 +119,7 @@ function DriverDetails({ Location }) {
           margin: 40,
         }}
       >
-        <div style={{ backgroundColor: "#eee" }}>
+        <div style={{ backgroundColor: "#eee" }}   className="col-md-6">
           <div style={{ padding: "20px" }}>
             <h4>{Location.state.data.car.name}</h4>
             <img
@@ -359,7 +361,7 @@ function DriverDetails({ Location }) {
         </div>
         {/* Right */}
         <div
-          className="detail"
+          className="detail col-md-6"
           style={{ backgroundColor: "#eee", padding: "70px" }}
         >
           <h4>DRIVER DETAILS</h4>
@@ -846,32 +848,7 @@ function DriverDetails({ Location }) {
             </select>
           </div>
 
-          <div>
-            <input
-              type="radio"
-              class="form-control"
-              value="AUSTIN"
-              name="gender"
-            />{" "}
-            Male
-            <br></br>
-            <input
-              type="radio"
-              class="form-control"
-              value="AUSTIN"
-              name="gender"
-            />{" "}
-            Female
-          </div>
-          <div>AUSTIN LOCATION CHARGES </div>
-          <select class="form-control">
-            <option value="1248 W Gray St, Houston, TX 77019, USA">
-              1248 W Gray St, Houston, TX 77019, USA{" "}
-            </option>
-            <option value="1248 W Gray St, Houston, TX 77019, USA">
-              1248 W Gray St, Houston, TX 77019, USA{" "}
-            </option>
-          </select>
+        
           <div style={{ borderBottomColor: "red", borderBottomWidth: "1px" }}>
             <button
               onSubmit={submit}
