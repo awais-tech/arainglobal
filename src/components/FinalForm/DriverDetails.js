@@ -99,32 +99,18 @@ function DriverDetails({ Location }) {
   };
   return (
     <>
-      <div
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          display: "flex",
-          margin: 40,
-        }}
-      >
+      <div className="row">
+        <div className="col-md-12">
         <h1>CheckOut</h1>
-       
+        </div>
       </div>
-      <div
-      className="row"
-        style={{
-          flexDirection: "row",
-          justifyContent: "space-around",
-          display: "flex",
-          margin: 40,
-        }}
-      >
-        <div style={{ backgroundColor: "#eee" }}   className="col-md-6">
-          <div style={{ padding: "20px" }}>
+      <div className="row">
+        <div style={{ backgroundColor: "#eee" }} className="col-md-6">
+          <div style={{ padding: "20px" }} className="row">
             <h4>{Location.state.data.car.name}</h4>
             <img
               src={background}
-              style={{ height: "200px", width: "350px", paddingTop: "20px" }}
+              style={{ height: "200px", width: "100%", paddingTop: "20px" }}
             />
             <h2>RATE</h2>
             <div
@@ -302,61 +288,45 @@ function DriverDetails({ Location }) {
                 display: "flex",
               }}
             >
+              <div className="row">
+                <div className="col-md-12">
               <h3 style={{ marginTop: "20px" }}>TAXES & FEES</h3>
-
-              <div
-                style={{
-                  backgroundColor: "#fff",
-                  flexDirection: "row",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "10px",
-                  marginBottom: "5px",
-                }}
-              >
-                <p>Tax</p>
-                <p>$ {Location.state.charges.tax} </p>
+              <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
+                <div className="col-md-6">
+                  <p>Tax</p>
+                </div>
+                <div className="col-md-6">
+                  <p>$ {Location.state.charges.tax} </p>
+                </div>
               </div>
-              <div
-                style={{
-                  backgroundColor: "#fff",
-                  flexDirection: "row",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "10px",
-                  marginBottom: "5px",
-                }}
-              >
-                <p>Admin Fee</p>
-                <p>$ {Location.state.charges.fees}</p>
+              <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
+                <div className="col-md-6">
+                  <p>Admin Fee</p>
+                </div>
+                <div className="col-md-6">
+                  <p>$ {Location.state.charges.fees}</p>
+                </div>
               </div>
-              <div
-                style={{
-                  backgroundColor: "#fff",
-                  flexDirection: "row",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "10px",
-                  marginBottom: "5px",
-                }}
-              >
-                <p>Pickup Charges</p>
+              <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
+                <div className="col-md-6">
+                  <p>Pickup Charges</p>
+                </div>
+                <div className="col-md-6">
+                  ----
+                </div>
               </div>
             </div>
 
-            <div
-              style={{
-                backgroundColor: "#fff",
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                padding: "30px",
-                marginBottom: "5px",
-              }}
-            >
-              <p>Estimated total</p>
-              <p>$ {Location.state.total}</p>
+            <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
+              <div className="col-md-6">
+                <p>Estimated total</p>
+              </div>
+              <div className="col-md-6">
+                <p>$ {Location.state.total}</p>
+              </div>
             </div>
+            </div>
+          </div>
           </div>
         </div>
         {/* Right */}
@@ -365,15 +335,8 @@ function DriverDetails({ Location }) {
           style={{ backgroundColor: "#eee", padding: "70px" }}
         >
           <h4>DRIVER DETAILS</h4>
-          <div
-            style={{
-              flexDirection: "row",
-              display: "flex",
-              justifyContent: "space-between",
-              width: "110%",
-            }}
-          >
-            <div style={{ flexDirection: "column" }}>
+          <div className="row">
+            <div className="col-md-6">
               <p>FIRST NAME *</p>
               <input
                 type="text"
@@ -383,7 +346,7 @@ function DriverDetails({ Location }) {
                 onChange={(e) => handle(e)}
               />
             </div>
-            <div style={{ flexDirection: "column" }}>
+            <div className="col-md-6">
               <p>LAST NAME *</p>
               <input
                 type="text"
@@ -394,108 +357,122 @@ function DriverDetails({ Location }) {
               />
             </div>
           </div>
-          <div>COUNTRY / REGION United States (US)</div>
-          <div>STREET ADDRESS *</div>
-          <input
-            type="text"
-            class="form-control"
-            style={{ width: "110%" }}
-            id="STREET"
-            value={data.STREET}
-            onChange={(e) => handle(e)}
-          />
-          <div>TOWN / CITY *</div>
-          <input
-            type="text"
-            class="form-control"
-            style={{ width: "110%" }}
-            id="CITY"
-            value={data.CITY}
-            onChange={(e) => handle(e)}
-          />
-          <div>STATE *</div>
-          <select
-            class="form-control"
-            id="STATE"
-            value={data.STATE}
-            onChange={(e) => handle(e)}
-          >
-            <option value="1248 W Gray St, Houston, TX 77019, USA">
-              1248 W Gray St, Houston, TX 77019, USA{" "}
-            </option>
-            <option value="1248 W Gray St, Houston, TX 77019, USA">
-              1248 W Gray St, Houston, TX 77019, USA{" "}
-            </option>
-          </select>
-          <div>PHONE *</div>
-          <input
-            type="text"
-            class="form-control"
-            style={{ width: "110%" }}
-            id="PHONE"
-            value={data.PHONE}
-            onChange={(e) => handle(e)}
-          />
-          <div>EMAIL ADDRESS *</div>
-          <input
-            type="text"
-            class="form-control"
-            style={{ width: "110%" }}
-            id="EMAIL"
-            value={data.EMAIL}
-            onChange={(e) => handle(e)}
-          />
+          <div className="row">
+            <div className="col-md-12">COUNTRY / REGION United States (US)</div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div>STREET ADDRESS *</div>
+              <input
+                type="text"
+                class="form-control"
+                style={{ width: "100%" }}
+                id="STREET"
+                value={data.STREET}
+                onChange={(e) => handle(e)}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div>TOWN / CITY *</div>
+              <input
+                type="text"
+                class="form-control"
+                style={{ width: "100%" }}
+                id="CITY"
+                value={data.CITY}
+                onChange={(e) => handle(e)}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div>STATE *</div>
+              <select
+                class="form-control"
+                id="STATE"
+                value={data.STATE}
+                onChange={(e) => handle(e)}
+              >
+                <option value="1248 W Gray St, Houston, TX 77019, USA">
+                  1248 W Gray St, Houston, TX 77019, USA{" "}
+                </option>
+                <option value="1248 W Gray St, Houston, TX 77019, USA">
+                  1248 W Gray St, Houston, TX 77019, USA{" "}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div>PHONE *</div>
+              <input
+                type="text"
+                class="form-control"
+                style={{ width: "100%" }}
+                id="PHONE"
+                value={data.PHONE}
+                onChange={(e) => handle(e)}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div>EMAIL ADDRESS *</div>
+              <input
+                type="text"
+                class="form-control"
+                style={{ width: "100%" }}
+                id="EMAIL"
+                value={data.EMAIL}
+                onChange={(e) => handle(e)}
+              />
+            </div>
+          </div>
 
-          <div>
+          <div style={{ marginTop: 20 }}>
             <h2>DRIVER INFORMATION</h2>
           </div>
-          <div>DRIVING LICENSE* (REQUIRED) </div>
-          <input
-            type="text"
-            class="form-control"
-            style={{ width: "110%" }}
-            id="LICENSE"
-            value={data.LICENSE}
-            onChange={(e) => handle(e)}
-          />
-          <div
-            style={{
-              flexDirection: "row",
-              display: "flex",
-              justifyContent: "space-between",
-              width: "110%",
-            }}
-          >
-            <div style={{ flexDirection: "column" }}>
+          <div className="row">
+            <div className="col-md-12">
+              <div>DRIVING LICENSE* (REQUIRED) </div>
+              <input
+                type="text"
+                class="form-control"
+                style={{ width: "100%" }}
+                id="LICENSE"
+                value={data.LICENSE}
+                onChange={(e) => handle(e)}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-6">
               <p>EXPIRY DATE* (REQUIRED)</p>
               <input
                 type="datetime-local"
                 id="EXPIRY"
                 value={data.EXPIRY}
                 onChange={(e) => handle(e)}
+                style={{ width: "100%" }}
               />
             </div>
-            <div style={{ flexDirection: "column" }}>
+            <div className="col-md-6">
               <p>DATE OF BIRTH* (REQUIRED)</p>
               <input
                 type="datetime-local"
                 id="BIRTH"
                 value={data.BIRTH}
                 onChange={(e) => handle(e)}
+                style={{ width: "100%" }}
               />
             </div>
           </div>
           <div>
             <h2>INSURANCE INFORMATION</h2>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>EXPIRY DATE* (REQUIRED)</p>
                 <input
                   type="text"
@@ -505,7 +482,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>DATE OF BIRTH* (REQUIRED)</p>
                 <input
                   type="text"
@@ -521,15 +498,8 @@ function DriverDetails({ Location }) {
           <div>
             <h2>ADDITIONAL DRIVER</h2>
             <h2>Driver 1</h2>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>EXPIRY DATE* (REQUIRED)</p>
                 <input
                   type="text"
@@ -539,7 +509,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>DATE OF BIRTH* (REQUIRED)</p>
                 <input
                   type="text"
@@ -550,25 +520,22 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <label>MAILING ADDRESS </label>
-            <input
-              type="text"
-              class="form-control"
-              style={{ width: "110%" }}
-              id="MAILING"
-              value={data.MAILING}
-              onChange={(e) => handle(e)}
-            />
+            <div className="row">
+              <div className="col-md-12">
+                <label>MAILING ADDRESS </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  style={{ width: "100%" }}
+                  id="MAILING"
+                  value={data.MAILING}
+                  onChange={(e) => handle(e)}
+                />
+              </div>
+            </div>
 
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>CITY</p>
                 <input
                   type="text"
@@ -578,7 +545,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>STATE/ZIP</p>
                 <input
                   type="text"
@@ -589,15 +556,8 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>PHONE</p>
                 <input
                   type="text"
@@ -607,7 +567,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>EMAIL ADDRESS</p>
                 <input
                   type="text"
@@ -618,15 +578,8 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>DRIVING LICENSE</p>
                 <input
                   type="text"
@@ -636,7 +589,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>STATE</p>
                 <input
                   type="text"
@@ -647,15 +600,8 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>EXPIRY DATE</p>
                 <input
                   type="text"
@@ -665,7 +611,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>DATE OF BIRTH</p>
                 <input
                   type="text"
@@ -679,15 +625,8 @@ function DriverDetails({ Location }) {
           </div>
           <div>
             <h2>Driver 2</h2>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>EXPIRY DATE* (REQUIRED)</p>
                 <input
                   type="text"
@@ -697,7 +636,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>DATE OF BIRTH* (REQUIRED)</p>
                 <input
                   type="text"
@@ -708,25 +647,22 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <label>MAILING ADDRESS </label>
-            <input
-              type="text"
-              class="form-control"
-              style={{ width: "110%" }}
-              id="MAILINGADDRESSDRIVER"
-              value={data.MAILINGADDRESSDRIVER}
-              onChange={(e) => handle(e)}
-            />
+            <div className="row">
+              <div className="col-md-12">
+                <label>MAILING ADDRESS </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  style={{ width: "100%" }}
+                  id="MAILINGADDRESSDRIVER"
+                  value={data.MAILINGADDRESSDRIVER}
+                  onChange={(e) => handle(e)}
+                />
+              </div>
+            </div>
 
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>CITY</p>
                 <input
                   type="text"
@@ -736,7 +672,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>STATE/ZIP</p>
                 <input
                   type="text"
@@ -747,15 +683,8 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>PHONE</p>
                 <input
                   type="text"
@@ -765,7 +694,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>EMAIL ADDRESS</p>
                 <input
                   type="text"
@@ -776,15 +705,8 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>DRIVING LICENSE</p>
                 <input
                   type="text"
@@ -794,7 +716,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>STATE</p>
                 <input
                   type="text"
@@ -805,15 +727,8 @@ function DriverDetails({ Location }) {
                 />
               </div>
             </div>
-            <div
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "space-between",
-                width: "110%",
-              }}
-            >
-              <div style={{ flexDirection: "column" }}>
+            <div className="row">
+              <div className="col-md-6">
                 <p>EXPIRY DATE</p>
                 <input
                   type="text"
@@ -823,7 +738,7 @@ function DriverDetails({ Location }) {
                   onChange={(e) => handle(e)}
                 />
               </div>
-              <div style={{ flexDirection: "column" }}>
+              <div className="col-md-6">
                 <p>DATE OF BIRTH</p>
                 <input
                   type="text"
@@ -835,20 +750,21 @@ function DriverDetails({ Location }) {
               </div>
             </div>
           </div>
-          <div>
-            <>CHOOSE YOUR PICKUP LOCATION</>
+          <div className="row">
+            <div className="col-md-12">
+              <>CHOOSE YOUR PICKUP LOCATION</>
 
-            <select class="form-control">
-              <option value="1248 W Gray St, Houston, TX 77019, USA">
-                1248 W Gray St, Houston, TX 77019, USA{" "}
-              </option>
-              <option value="1248 W Gray St, Houston, TX 77019, USA">
-                1248 W Gray St, Houston, TX 77019, USA{" "}
-              </option>
-            </select>
+              <select class="form-control">
+                <option value="1248 W Gray St, Houston, TX 77019, USA">
+                  1248 W Gray St, Houston, TX 77019, USA{" "}
+                </option>
+                <option value="1248 W Gray St, Houston, TX 77019, USA">
+                  1248 W Gray St, Houston, TX 77019, USA{" "}
+                </option>
+              </select>
+            </div>
           </div>
 
-        
           <div style={{ borderBottomColor: "red", borderBottomWidth: "1px" }}>
             <button
               onSubmit={submit}

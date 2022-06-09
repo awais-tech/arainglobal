@@ -7,12 +7,20 @@ function FinalForm() {
   const Location = useLocation();
   return (
     <>
-    
-    
-      <CarBill Location={Location} />,
- 
-      <DriverDetails Location={Location} />
-     
+    <div className="row">
+      <div className="col-md-12">
+      <div className="row">
+        <div className="col-md-12">
+        <CarBill Location={Location} />,
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-md-12">
+        <DriverDetails Location={Location} />
+        </div>
+      </div>
+      </div>
+      </div>
     </>
   );
 }

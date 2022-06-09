@@ -1,41 +1,58 @@
-* {
+/* * {
     padding: 0%;
     margin: 0%;
-  }
-  .container-car {
-    position: absolute;
-    width: 100%;
+  } */
+.container-car {
+  position: absolute;
+  /* width: 100%;
     height: 60vh;
     background-repeat: no-repeat;
-    background-size: cover;
-    left: 0%;
-    top: 0%;
-    bottom: 0%;
-    right: 0%;
-    z-index: -1;
-  }
-  .threebox{
-      display: flex;
+    background-size: cover; */
+  left: 0%;
+  top: 0%;
+  bottom: 0%;
+  right: 0%;
+  /* z-index: -1; */
+}
+.threebox {
+  /* display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    
-  }
-  .box{
+    justify-content: flex-start; */
+  width: 100%;
+  gap: 20px;
+  height: 300px;
+  padding: 30px;
+}
+.BackImage{
+  background-image: url('/src/assets/img.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  /* padding-bottom: 40px; */
+}
+/* .box{
       padding: 20px;
       margin: 20px;
-  }
+      height: 200;
+      width: 300px;
+  } */
 
-  .car-Cont{
-      background-color: #eee;
-      width: 90%;
-      height: 60%;
-      margin: 0 auto; 
-      margin-top: 20px;
-      margin-bottom: 20px;
-  }
-
-  .car-Cont{
-      display: flex;
-      justify-content: space-around;
-      flex-direction: row;
-  }
+.car-Cont {
+  background-color: #eee;
+  width: 90%;
+  height: 60%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.BottomCard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  width: 100%;
+}
+.car-Cont {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}

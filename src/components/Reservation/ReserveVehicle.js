@@ -67,6 +67,7 @@ function ReserveVehicle() {
                         type="datetime-local"
                         id="pickDate"
                         value={data.pickDate}
+                        style={{ width: '95%'}}
                         onChange={(e) => handle(e)}
                       />
                     </div>
@@ -97,6 +98,7 @@ function ReserveVehicle() {
                         type="datetime-local"
                         id="returnDate"
                         value={data.returnDate}
+                        style={{ width: '95%'}}
                         onChange={(e) => handle(e)}
                       />
                     </div>
@@ -108,7 +110,7 @@ function ReserveVehicle() {
                 type="button"
                 class="btn btn-danger btn-lg btn-block mt-5"
               >
-                continue reservation
+                Continue Reservation
               </button>
             </div>
           </div>

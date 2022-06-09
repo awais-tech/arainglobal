@@ -5,3 +5,19 @@
   margin-bottom: 80px;
   background-color: blue;
 }
+.Cards{
+  background-color: #f0ecec;
+  border-top: 1px solid red;
+  border-bottom: 1px solid red;
+  padding: 30px;
+}
+.NewComp{
+  margin-top: 30px;
+}
+.BackImage{
+  background-image: url('/src/assets/img.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  /* padding-bottom: 40px; */
+}

@@ -1,17 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import ReserveVehicle from './components/Reservation/ReserveVehicle';
-import Cars from './components/carDetails/Cars';
-import AddOns from './components/VehicleAdds/AddOns';
+import logo from "./logo.svg";
+import "./App.css";
+import ReserveVehicle from "./components/Reservation/ReserveVehicle";
+import Cars from "./components/carDetails/Cars";
+import AddOns from "./components/VehicleAdds/AddOns";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import VhicleAdd from './components/VehicleAdds/VhicleAdd';
-import AddOnsDetails from './components/VehicleAdds/AddOnsDetails';
-import CarBill from './components/FinalForm/CarBill';
-import DriverDetails from './components/FinalForm/DriverDetails';
-import FinalForm from './components/FinalForm/FinalForm';
+import VhicleAdd from "./components/VehicleAdds/VhicleAdd";
+import AddOnsDetails from "./components/VehicleAdds/AddOnsDetails";
+import CarBill from "./components/FinalForm/CarBill";
+import DriverDetails from "./components/FinalForm/DriverDetails";
+import FinalForm from "./components/FinalForm/FinalForm";
 
 function App() {
-  
   return (
     <div style={styles.app}>
       <Router>

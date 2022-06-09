@@ -40,62 +40,147 @@ function AddOnsDetails({ data }) {
           flexDirection: "row",
           justifyContent: "space-between",
           display: "flex",
-          margin: 40,
+          marginTop: 100,
         }}
       >
         <h1>VEHICLE ADD-ONS</h1>
-       
       </div>
       <div
-      className="row"
+        className="row"
         style={{
           flexDirection: "row",
           justifyContent: "space-around",
           display: "flex",
-          margin: 40,
+          marginTop: 100,
         }}
       >
         <div style={{ flexDirection: "column" }} className="col-lg-6">
           <div
             style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-              display: "flex",
-              backgroundColor: "#eee",
-              alignItems: "center",
               padding: "10px",
-              borderBottom: "1px solid red",
             }}
           >
-            <div
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-                display: "flex",
-                padding: "20px",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src={background}
-                style={{ height: "100px", width: "100px" }}
-              />
-              <div style={{ marginLeft: "20px" }}>
+            <div className="row Cards">
+              <div className="col-md-3">
+                <img
+                  src={background}
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <div className="col-md-4">
                 <h4>ADDITIONAL DRIVER 2</h4>
                 <p>15$ will be charged per additional driver</p>
               </div>
-            </div>
-            <div className="buttons">
-              <button
-                type="button"
-                class="btn btn-outline-danger"
-                onClick={() => add("D1", 15)}
-              >
-                ADD
-              </button>
+              <div className="col-md-4">
+                <div className="buttons">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    onClick={() => add("D1", 15)}
+                  >
+                    ADD
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
           <div
+            style={{
+              padding: "10px",
+            }}
+          >
+            <div className="row Cards">
+              <div className="col-md-3">
+                <img
+                  src={background}
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <div className="col-md-4">
+                <h4>ADDITIONAL DRIVER 2</h4>
+                <p>15$ will be charged per additional driver</p>
+              </div>
+              <div className="col-md-4">
+                <div className="buttons">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    onClick={() => add("D2", 15)}
+                  >
+                    ADD
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              padding: "10px",
+            }}
+          >
+            <div className="row Cards">
+              <div className="col-md-3">
+                <img
+                  src={background}
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <div className="col-md-4">
+                <h4>POST TRIP CLEANING</h4>
+                <p>
+                  {" "}
+                  Return the car hassle free, without worrying about cleaning up
+                  after your trip. Does not cover upholstery cleaning, spills,
+                  stains, pet hair, or smoke removal. $55/trip
+                </p>
+              </div>
+              <div className="col-md-4">
+                <div className="buttons">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    onClick={() => add("PT", 20)}
+                  >
+                    ADD
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style={{
+              padding: "10px",
+            }}
+          >
+            <div className="row Cards">
+              <div className="col-md-3">
+                <img
+                  src={background}
+                  style={{ height: "100px", width: "100px" }}
+                />
+              </div>
+              <div className="col-md-4">
+                <h4>PREPAID REFUEL</h4>
+                <p>
+                  Save time, make drop-off a breeze, and avoid additional fees
+                  by adding this Extra, which allows you to return my car at any
+                  fuel level. Price includes up to a full tank of gas. $60/trip
+                </p>
+              </div>
+              <div className="col-md-4">
+                <div className="buttons">
+                  <button
+                    type="button"
+                    class="btn btn-outline-danger"
+                    onClick={() => add("PR", 15)}
+                    >
+                    ADD
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* <div
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -133,8 +218,8 @@ function AddOnsDetails({ data }) {
                 ADD
               </button>
             </div>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -176,8 +261,8 @@ function AddOnsDetails({ data }) {
                 ADD
               </button>
             </div>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -219,14 +304,14 @@ function AddOnsDetails({ data }) {
                 ADD
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div
           className="detail col-lg-6"
           style={{ backgroundColor: "#eee", padding: "40px" }}
         >
           <h3>{data.state.car.name}</h3>
-          <img src={background} style={{ height: "200px", width: "300px" }} />
+          <img src={background} style={{ height: "200px", width: "100%" }} />
           <h3 style={{ margin: "10px" }}>RATE</h3>
           <div
             style={{
