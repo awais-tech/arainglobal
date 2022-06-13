@@ -63,7 +63,7 @@ function AddOnsDetails({ data }) {
             <div className="row Cards">
               <div className="col-md-3">
                 <img
-                  src={background}
+                  src={data.state.car.img}
                   style={{ height: "100px", width: "100px" }}
                 />
               </div>
@@ -93,7 +93,7 @@ function AddOnsDetails({ data }) {
             <div className="row Cards">
               <div className="col-md-3">
                 <img
-                  src={background}
+                  src={data.state.car.img}
                   style={{ height: "100px", width: "100px" }}
                 />
               </div>
@@ -123,7 +123,7 @@ function AddOnsDetails({ data }) {
             <div className="row Cards">
               <div className="col-md-3">
                 <img
-                  src={background}
+                  src={data.state.car.img}
                   style={{ height: "100px", width: "100px" }}
                 />
               </div>
@@ -158,7 +158,7 @@ function AddOnsDetails({ data }) {
             <div className="row Cards">
               <div className="col-md-3">
                 <img
-                  src={background}
+                  src={data.state.car.img}
                   style={{ height: "100px", width: "100px" }}
                 />
               </div>
@@ -315,7 +315,7 @@ function AddOnsDetails({ data }) {
           style={{ backgroundColor: "#eee", padding: "40px" }}
         >
           <h3>{data.state.car.name}</h3>
-          <img src={background} style={{ height: "200px", width: "100%" }} />
+          <img src={data.state.car.img} style={{ height: "200px", width: "100%" }} />
           <h3 style={{ margin: "10px" }}>RATE</h3>
           <div
             style={{
