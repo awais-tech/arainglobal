@@ -32,6 +32,7 @@ function ReserveVehicle() {
 
   return (
     <>
+    <div className="scrolloff">
       <div className="container-img">
         <img style={{ width: "100%" }} src={background} />
       </div>
@@ -53,9 +54,7 @@ function ReserveVehicle() {
                   value={data.check}
                   onChange={(e) => handle(e)}
                 >
-                  <option value="1248 W Gray St, Houston, TX 77019, USA">
-                    1248 W Gray St, Houston, TX 77019, USA{" "}
-                  </option>
+                
                   <option value="Austin Tx">Austin Tx </option>
                 </select>
                 <div>
@@ -85,9 +84,7 @@ function ReserveVehicle() {
                   value={data.drop}
                   onChange={(e) => handle(e)}
                 >
-                  <option value="1248 W Gray St, Houston, TX 77019, USA">
-                    1248 W Gray St, Houston, TX 77019, USA{" "}
-                  </option>
+                
                   <option value="Austin Tx">Austin Tx </option>
                 </select>
                 <div>
@@ -116,6 +113,7 @@ function ReserveVehicle() {
           </div>
         </div>
       </form>
+      </div>
     </>
   );
 }

@@ -74,11 +74,12 @@ function AddOnsDetails({ data }) {
               <div className="col-md-4">
                 <div className="buttons">
                   <button
+                    disabled={extra.D1 != ""}
                     type="button"
                     class="btn btn-outline-danger"
                     onClick={() => add("D1", 15)}
                   >
-                    ADD
+                    {extra.D1 != "" ? "Added" : "Add"}
                   </button>
                 </div>
               </div>
@@ -103,11 +104,12 @@ function AddOnsDetails({ data }) {
               <div className="col-md-4">
                 <div className="buttons">
                   <button
+                    disabled={extra.D2 != ""}
                     type="button"
                     class="btn btn-outline-danger"
                     onClick={() => add("D2", 15)}
                   >
-                    ADD
+                    {extra.D2 != "" ? "Added" : "Add"}
                   </button>
                 </div>
               </div>
@@ -137,11 +139,12 @@ function AddOnsDetails({ data }) {
               <div className="col-md-4">
                 <div className="buttons">
                   <button
+                    disabled={extra.PT != ""}
                     type="button"
                     class="btn btn-outline-danger"
                     onClick={() => add("PT", 20)}
                   >
-                    ADD
+                    {extra.PT != "" ? "Added" : "Add"}
                   </button>
                 </div>
               </div>
@@ -170,11 +173,12 @@ function AddOnsDetails({ data }) {
               <div className="col-md-4">
                 <div className="buttons">
                   <button
+                    disabled={extra.PR != ""}
                     type="button"
                     class="btn btn-outline-danger"
                     onClick={() => add("PR", 15)}
-                    >
-                    ADD
+                  >
+                    {extra.PR != "" ? "Added" : "Add"}
                   </button>
                 </div>
               </div>
