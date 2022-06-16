@@ -5,6 +5,7 @@ import DateTimePicker from "react-datetime-picker";
 import Swal from "sweetalert2";
 import emailjs from "emailjs-com";
 function DriverDetails({ Location }) {
+  const [agree, setAgree] = useState(false);
   const [data, setData] = useState({
     FIRST: "",
     LAST: "",
@@ -48,7 +49,9 @@ function DriverDetails({ Location }) {
     setData(newdata);
     console.log(newdata);
   }
-
+  const checkboxHandler = () => {
+    setAgree(!agree);
+  };
   const submit = () => {
     console.log(2);
 
@@ -101,7 +104,7 @@ function DriverDetails({ Location }) {
     <>
       <div className="row">
         <div className="col-md-12">
-        <h1>CheckOut</h1>
+          <h1>CheckOut</h1>
         </div>
       </div>
       <div className="row">
@@ -109,10 +112,18 @@ function DriverDetails({ Location }) {
           <div style={{ padding: "20px" }} className="row">
             <h4>{Location.state.data.car.name}</h4>
             <img
-              src={background}
+              src={Location.state.data.car.img}
               style={{ height: "200px", width: "100%", paddingTop: "20px" }}
             />
-            <h2>RATE</h2>
+            <h4
+              style={{
+                fontWeight: "bold",
+                marginBottom: "20px",
+                marginTop: "20px",
+              }}
+            >
+              RATE
+            </h4>
             <div
               style={{
                 backgroundColor: "#fff",
@@ -121,11 +132,13 @@ function DriverDetails({ Location }) {
                 justifyContent: "space-between",
                 padding: "10px",
                 marginBottom: "5px",
+                margin: "20px",
+                borderRadius: "8px",
               }}
             >
-              <p>Qty</p>
-              <p>Rate</p>
-              <p>SubTotal</p>
+              <p style={{ fontWeight: "bold" }}>Quantity</p>
+              <p style={{ fontWeight: "bold" }}>Rate</p>
+              <p style={{ fontWeight: "bold" }}>Sub-Total</p>
             </div>
 
             <div
@@ -136,6 +149,8 @@ function DriverDetails({ Location }) {
                 justifyContent: "space-between",
                 padding: "10px",
                 marginBottom: "5px",
+                margin: "20px",
+                borderRadius: "8px",
               }}
             >
               <p>{Location.state.duration} Days</p>
@@ -151,6 +166,8 @@ function DriverDetails({ Location }) {
                 justifyContent: "space-between",
                 padding: "10px",
                 marginBottom: "5px",
+                margin: "20px",
+                borderRadius: "8px",
               }}
             >
               <p>Rental Charges Rate</p>
@@ -164,13 +181,23 @@ function DriverDetails({ Location }) {
                 justifyContent: "space-between",
                 padding: "10px",
                 marginBottom: "5px",
+                margin: "20px",
+                borderRadius: "8px",
               }}
             >
               <p>Quality</p>
               <p>Rate</p>
               <p>SubTotal</p>
             </div>
-            <h3 style={{ marginTop: "20px" }}>ADD-ONS</h3>
+            <h4
+              style={{
+                fontWeight: "bold",
+                marginBottom: "20px",
+                marginTop: "20px",
+              }}
+            >
+              ADD-ONS
+            </h4>
 
             <div
               style={{
@@ -187,11 +214,12 @@ function DriverDetails({ Location }) {
                   justifyContent: "space-between",
                   padding: "10px",
                   marginBottom: "5px",
+                  margin: '20px'
                 }}
               >
-                <p>Quality</p>
-                <p>Rate</p>
-                <p>SubTotal</p>
+                <p style={{fontWeight: 'bold'}}>Add-Ons</p>
+                <p style={{fontWeight: 'bold'}}>Rate</p>
+                <p style={{fontWeight: 'bold'}}>Total</p>
               </div>
 
               <div
@@ -202,11 +230,13 @@ function DriverDetails({ Location }) {
                   justifyContent: "space-between",
                   padding: "10px",
                   marginBottom: "5px",
+                  margin: '20px'
+
                 }}
               >
                 {Location.state.extra.D1 && (
                   <>
-                    <p>Driver 1</p>
+                    <p style={{fontWeight: 'bold'}}>Driver 1</p>
                     <p>$ {Location.state.extra.D1}</p>
                     <p>$ {Location.state.extra.D1}</p>
                   </>
@@ -220,11 +250,13 @@ function DriverDetails({ Location }) {
                   justifyContent: "space-between",
                   padding: "10px",
                   marginBottom: "5px",
+                  margin: '20px'
+
                 }}
               >
                 {Location.state.extra.D2 && (
                   <>
-                    <p>Driver 2</p>
+                    <p style={{fontWeight: 'bold'}}>Driver 2</p>
                     <p>$ {Location.state.extra.D2}</p>
                     <p>$ {Location.state.extra.D2}</p>
                   </>
@@ -239,11 +271,13 @@ function DriverDetails({ Location }) {
                   justifyContent: "space-between",
                   padding: "10px",
                   marginBottom: "5px",
+                  margin: '20px'
+
                 }}
               >
                 {Location.state.extra.PT && (
                   <>
-                    <p>POST TRIP CLEANING</p>
+                    <p style={{fontWeight: 'bold'}}>POST TRIP CLEANING</p>
                     <p>$ {Location.state.extra.PT} </p>
                     <p>$ {Location.state.extra.PT}</p>
                   </>
@@ -257,11 +291,13 @@ function DriverDetails({ Location }) {
                   justifyContent: "space-between",
                   padding: "10px",
                   marginBottom: "5px",
+                  margin: '20px'
+
                 }}
               >
                 {Location.state.extra.PR && (
                   <>
-                    <p>PREPAID REFUEL</p>
+                    <p style={{fontWeight: 'bold'}}>PREPAID REFUEL</p>
                     <p>$ {Location.state.extra.PR} </p>
                     <p>$ {Location.state.extra.PR}</p>
                   </>
@@ -275,9 +311,11 @@ function DriverDetails({ Location }) {
                   justifyContent: "space-between",
                   padding: "10px",
                   marginBottom: "5px",
+                  margin: '20px'
+
                 }}
               >
-                <p>Add-ons Charges Rate</p>
+                <p style={{fontWeight: 'bold'}}>Add-ons Charges Rate</p>
                 <p>{Location.state.totalCharges}</p>
               </div>
             </div>
@@ -290,43 +328,78 @@ function DriverDetails({ Location }) {
             >
               <div className="row">
                 <div className="col-md-12">
-              <h3 style={{ marginTop: "20px" }}>TAXES & FEES</h3>
-              <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
-                <div className="col-md-6">
-                  <p>Tax</p>
+                  <h4
+                    style={{
+                      fontWeight: "bold",
+                      marginBottom: "20px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    TAXES & FEES
+                  </h4>
+                  <div
+                    className="row"
+                    style={{
+                      backgroundColor: "white",
+                      padding: "10px",
+                      margin: "10px",
+                    }}
+                  >
+                    <div className="col-md-6">
+                      <p style={{fontWeight: 'bold'}}>Tax</p>
+                    </div>
+                    <div className="col-md-6">
+                      <p>$ {Location.state.charges.tax} </p>
+                    </div>
+                  </div>
+                  <div
+                    className="row"
+                    style={{
+                      backgroundColor: "white",
+                      padding: "10px",
+                      margin: "10px",
+                    }}
+                  >
+                    <div className="col-md-6">
+                      <p style={{fontWeight: 'bold'}}>Admin Fee</p>
+                    </div>
+                    <div className="col-md-6">
+                      <p>$ {Location.state.charges.fees}</p>
+                    </div>
+                  </div>
+                  <div
+                    className="row"
+                    style={{
+                      backgroundColor: "white",
+                      padding: "10px",
+                      margin: "10px",
+                    }}
+                  >
+                    <div className="col-md-6">
+                      <p style={{fontWeight: 'bold'}}>Pickup Charges</p>
+                    </div>
+                    <div className="col-md-6">----</div>
+                  </div>
+                  <div
+                  className="row"
+                  style={{
+                    backgroundColor: "white",
+                    padding: "10px",
+                    margin: "10px",
+                  }}
+                >
+                  <div className="col-md-6">
+                    <p style={{fontWeight: 'bold'}}>Estimated total</p>
+                  </div>
+                  <div className="col-md-6">
+                    <p>$ {Location.state.total}</p>
+                  </div>
                 </div>
-                <div className="col-md-6">
-                  <p>$ {Location.state.charges.tax} </p>
                 </div>
-              </div>
-              <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
-                <div className="col-md-6">
-                  <p>Admin Fee</p>
-                </div>
-                <div className="col-md-6">
-                  <p>$ {Location.state.charges.fees}</p>
-                </div>
-              </div>
-              <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
-                <div className="col-md-6">
-                  <p>Pickup Charges</p>
-                </div>
-                <div className="col-md-6">
-                  ----
-                </div>
-              </div>
-            </div>
 
-            <div className="row" style={{backgroundColor: 'white', padding: '10px', margin: '10px'}}>
-              <div className="col-md-6">
-                <p>Estimated total</p>
-              </div>
-              <div className="col-md-6">
-                <p>$ {Location.state.total}</p>
+  
               </div>
             </div>
-            </div>
-          </div>
           </div>
         </div>
         {/* Right */}
@@ -334,7 +407,9 @@ function DriverDetails({ Location }) {
           className="detail col-md-6"
           style={{ backgroundColor: "#eee", padding: "70px" }}
         >
-          <h4>DRIVER DETAILS</h4>
+          <h4 style={{ fontWeight: "bold", marginBottom: "20px" }}>
+            DRIVER DETAILS
+          </h4>
           <div className="row">
             <div className="col-md-6">
               <p>FIRST NAME *</p>
@@ -432,7 +507,9 @@ function DriverDetails({ Location }) {
           </div>
 
           <div style={{ marginTop: 20 }}>
-            <h2>DRIVER INFORMATION</h2>
+            <h4 style={{ fontWeight: "bold", marginBottom: "20px" }}>
+              DRIVER INFORMATION
+            </h4>
           </div>
           <div className="row">
             <div className="col-md-12">
@@ -470,7 +547,15 @@ function DriverDetails({ Location }) {
             </div>
           </div>
           <div>
-            <h2>INSURANCE INFORMATION</h2>
+            <h4
+              style={{
+                fontWeight: "bold",
+                marginBottom: "20px",
+                marginTop: "20px",
+              }}
+            >
+              INSURANCE INFORMATION
+            </h4>
             <div className="row">
               <div className="col-md-6">
                 <p>EXPIRY DATE* (REQUIRED)</p>
@@ -496,8 +581,16 @@ function DriverDetails({ Location }) {
           </div>
 
           <div>
-            <h2>ADDITIONAL DRIVER</h2>
-            <h2>Driver 1</h2>
+            <h4
+              style={{
+                fontWeight: "bold",
+                marginBottom: "20px",
+                marginTop: "20px",
+              }}
+            >
+              ADDITIONAL DRIVER
+            </h4>
+            <h5>Driver 1</h5>
             <div className="row">
               <div className="col-md-6">
                 <p>EXPIRY DATE* (REQUIRED)</p>
@@ -624,7 +717,7 @@ function DriverDetails({ Location }) {
             </div>
           </div>
           <div>
-            <h2>Driver 2</h2>
+            <h5 style={{ marginTop: "20px" }}>Driver 2</h5>
             <div className="row">
               <div className="col-md-6">
                 <p>EXPIRY DATE* (REQUIRED)</p>
@@ -764,10 +857,21 @@ function DriverDetails({ Location }) {
               </select>
             </div>
           </div>
-
+          <div className="row" style={{ margin: "20px" }}>
+            <div className="col-md-1">
+              <input type="checkbox" id="agree" onChange={checkboxHandler} />
+            </div>
+            <div className="col-md-8">
+              <label htmlFor="agree">
+                {" "}
+                I Agree to <a href="">Terms and Conditions</a>
+              </label>
+            </div>
+          </div>
           <div style={{ borderBottomColor: "red", borderBottomWidth: "1px" }}>
             <button
-              onSubmit={submit}
+              disabled={!agree}
+              onClick={submit}
               type="button"
               class="btn btn-danger btn-lg  mt-5"
             >

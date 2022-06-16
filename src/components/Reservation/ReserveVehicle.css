@@ -26,7 +26,9 @@
   padding: 30px;
   background-color: white;
 }
-
+.scrolloff{
+  overflow-x: hidden !important;
+}
 
 .upperLabel{
   font-size: small;
