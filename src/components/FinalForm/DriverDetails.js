@@ -57,7 +57,7 @@ function DriverDetails({ Location }) {
       LAST: data.LAST,
       STREET: data.STREET,
       CITY: data.CITY,
-      STATE: data.state,
+      STATE: data.STATE,
       PHONE: data.PHONE,
       EMAIL: data.EMAIL,
       LICENSE: data.LICENSE,
